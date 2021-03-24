@@ -1,0 +1,61 @@
+<div class="card">
+    <div class="card-header text-center">
+      <div class="card-body">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner  d-flex "
+             style="height: 50vh; min-height: 20rem; max-height: 30rem">
+    
+             <div *ngFor="let carimage of carImages let i = index" [class]="sliderItemActive(i)" >
+                 <img
+              src="{{apiUrl}}{{carimage.imagePath}}"
+              class=""
+              style="height: 100%; width: 100%; object-fit: contain"
+              
+            />
+              </div>
+             </div>
+              <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleControls"
+              data-bs-slide="prev"
+            >
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    
+        </div>
+    </div>
+<div class="row ml-0 mr-0">
+    <div class="col-md-8 offset-md-2 ">
+        <div *ngIf="carDetail" class="mt-4">
+            <table class="table table-bordered">
+                <tr>
+                    <th>Marka :</th>
+                    <td>{{carDetail.brandName}}</td>
+                </tr>
+                <tr>
+                    <th>Renk :</th>
+                    <td>{{carDetail.colorName}}</td>
+                </tr>
+                <tr>
+                    <th>Kiralama Fiyatı :</th>
+                    <td>{{carDetail.dailyPrice}}</td>
+                </tr>
+                <tr>
+                    <th>Model Yılı :</th>
+                    <td>{{carDetail.modelYear}}</td>
+                </tr>
+               
+            </table>
+        </div>
+    </div>
+</div>   
+
+
+

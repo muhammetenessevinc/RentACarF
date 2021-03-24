@@ -1,0 +1,68 @@
+<!-- 
+    
+<div *ngIf="dataLoaded == false" class="spinner-grow text-success" role="status">
+    <span class="visually-hidden">Loading...</span>
+</div>
+
+<table *ngIf="dataLoaded==true" class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Marka</th>
+            <th>Renk</th>
+            <th>Model Yılı</th>
+            <th>Ücret</th>
+        </tr>
+    </thead>
+
+
+
+    <tr *ngFor="let car of cars">
+        <td>{{car.id}}</td>
+        <td>{{car.brandName}}</td>
+        <td>{{car.colorName}}</td>
+        <td>{{car.modelYear}}</td>
+        <td>{{car.dailyPrice}}</td>
+    </tr>
+</table> -->
+
+
+
+
+
+
+
+
+<div class="row ml-0 mr-0">
+    <div class="col-md-6"></div>
+    <div class="col-md-6">
+        <input type="text"  placeholder="Araba Adı Ara" class="form-control mt-4">
+    </div>
+  </div>
+  
+  <div class="row ml-0 mr-0">
+    <div *ngFor="let car of cars"  class="col-md-4 my-4">
+        <div  class="card" style="width: 100%;">
+            <img src="https://st.depositphotos.com/1607888/2925/v/380/depositphotos_29255415-stock-illustration-rent-a-car.jpg" class="card-img-top" alt="Araba Resmi">
+            <div class="card-body">
+              
+              <p> <b>Marka :</b> {{car.brandName}} </p>
+              <hr>
+              <p> <b>Model Yılı :</b> {{car.modelYear}} </p>
+              <hr>
+              <p> <b>Günlük Fiyatı :</b> {{car.dailyPrice}} </p>
+              <hr>
+              <p> <b>Renk :</b> {{car.colorName}} </p>
+              <hr>
+              <p> <b>carId :</b> {{car.carId}} </p>
+              <hr>
+              
+              
+              <a routerLink="/cars/detail/{{car.carId}}" class="btn btn-outline-dark mt-2">Detay</a>
+            </div>
+          </div>
+    </div>
+  </div>     
+
+
+
